@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  spelly:
+    build:
+      context: .
+      dockerfile: build/golang/Dockerfile
+    container_name: app.spelly.dev
+    env_file: src/.env
+    ports:
+      - 8001:8000
+    volumes:
+      - .:/app
